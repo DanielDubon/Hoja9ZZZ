@@ -1,6 +1,8 @@
 package Model;
 
 
+import java.util.Objects;
+
 /**
  * @author MAAG
  *
@@ -50,6 +52,26 @@ public class Word implements Comparable<Word> {
     @Override
     public int compareTo(Word word) {
         return english.compareTo(word.getEnglish());
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+
+        Word other = (Word) obj;
+        return english.equals(other.english);
+    }
+
+    // Sobreescribe el método hashCode
+    @Override
+    public int hashCode() {
+        return Objects.hash(english);
     }
 
 

@@ -22,11 +22,14 @@ public class DriverProgram {
         Scanner scanner = new Scanner(System.in);
         EstructuraArbol<Word> Thetree;
 
-        System.out.println("--Bienvenido al diccionario traductor (Ingles, Español, Frances)--");
+        System.out.println("--Bienvenido al diccionario traductor (Ingles a Español)--");
         String tipo = selector(scanner);
         Thetree = factory.crearArbol(tipo);
+
         Thetree.add(new Word("house","casa"));
         Thetree.add(new Word("dog","perro"));
+        System.out.println(Thetree.count());
+        System.out.println(Thetree.get(new Word("house","")).getSpanish());
         while (menu){
             System.out.println("¿Que desea realizar?");
 
@@ -54,7 +57,7 @@ public class DriverProgram {
         System.out.println("Seleccione que estructura de arbol utilizara: ");
         System.out.println("1. SPLAY_TREE");
         System.out.println("2. RED_BLACK_TREE");
-
+        System.out.println("3. BST");
 
         String opcion = n.nextLine();
         switch (opcion){
@@ -62,7 +65,8 @@ public class DriverProgram {
                 return "SPLAY_TREE";
             case "2":
                 return "RED_BLACK_TREE";
-
+            case "3":
+                return "BST";
         }
         return "";
     }
