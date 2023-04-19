@@ -28,7 +28,6 @@ public class DriverProgram {
 
         Thetree.add(new Word("house","casa"));
         Thetree.add(new Word("dog","perro"));
-        System.out.println(Thetree.count());
         System.out.println(Thetree.get(new Word("house","")).getSpanish());
         while (menu){
             System.out.println("¿Que desea realizar?");

@@ -21,7 +21,6 @@ public class TreesFactory<T extends Comparable<T>> {
             case "RED_BLACK_TREE":
                 return new ArbolRojoNegro<>();
             case "BST":
-                System.out.println("BST CREADO");
                 return new ArbolBinario<>();
             default:
                 throw new IllegalArgumentException("Tipo de árbol no encontrado....");
